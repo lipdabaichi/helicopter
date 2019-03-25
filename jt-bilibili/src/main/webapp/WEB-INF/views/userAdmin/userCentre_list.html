@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header card-header-warning">
+                    <h4 class="card-title">账号安全</h4>
+                    <p class="card-category">Complete your safety information</p>
+                </div>
+                <div class="card-body" id="userContent">
+
+                    <!--各种设置-->
+                    <div class="gezhong_szm">
+                        <!--一条开始a-->
+                        <div class="gezhong_szm_in">
+                            <b
+                                    style=" background:url(assets/img/icon/fourm.png) no-repeat 0 0"></b>
+                            <span>登录密码<br>
+						<em>已设置</em></span>
+                            <p>安全性高的密码，可以使账户更安全。建议您定期更换密码。安全性高的密码，可以使账户更安全。建议您定期更换密码。安全性高的密码，可以使账户更安全。建议您定期更换密码。</p>
+
+                            <a  id="load-updateLoginPWD-id" style="color: #ffffff">修改密码</a>
+                        </div>
+                        <!--一条开始a-->
+                        <div class="gezhong_szm_in">
+                            <b
+                                    style=" background:url(assets/img/icon/fourm.png) no-repeat 0 -50px"></b>
+                            <span>邮箱绑定<br>
+						<em>Email</em></span>
+                            <p>进行邮箱验证后，可用于接收敏感操作的身份验证信息，以及订阅更优惠商品的促销邮件。</p>
+
+                            <a id="load-email-id" style="color: #ffffff">绑定邮箱</a>
+                        </div>
+                        <!--一条开始a-->
+                        <div class="gezhong_szm_in">
+                            <b
+                                    style=" background:url(assets/img/icon/fourm.png) no-repeat 0 -100px"></b>
+                            <span>手机绑定<br>
+						<em>Phone</em></span>
+                            <p>进行手机验证后，可用于接收敏感操作的身份验证信息，以及进行积分消费的验证确认，非常有助于保护您的账号和账户财产安全。</p>
+
+                            <a id="load-update-phone-id" style="color: #ffffff">修改手机</a>
+                        </div>
+                        <!--一条开始a-->
+                        <div class="gezhong_szm_in">
+                            <b
+                                    style=" background: url(assets/img/icon/fourm.png) no-repeat 0 -150px"></b>
+                            <span>支付密码<br>
+						<em>Password</em></span>
+                            <p>设置支付密码后，在使用账户中余额时，需输入支付密码。</p>
+
+                            <a id="load-update-paypassword-id" style="color: #ffffff">修改密码</a>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-profile">
+                <div class="card-avatar">
+                    <a href="#pablo">
+                        <img class="img" src="assets/img/faces/kobe.png" />
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-category text-gray">超级用户</h6>
+                    <h4 class="card-title">Bill Gates</h4>
+                    <p class="card-description">
+                        我要找到20个女朋友!!!
+                    </p>
+                    <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //页面加载完成执行如下函数
+    $(function(){//匿名函数
+        //在指定元素上注册click时间
+        doLoadUI("load-updateLoginPWD-id","userAdmin/doLoginPasswordList");
+        doLoadUI("load-email-id","userAdmin/doUpdate_email");
+        doLoadUI("load-update-phone-id","userAdmin/doUpdate_Phone");
+        doLoadUI("load-update-paypassword-id","userAdmin/doUpdate_PayPassword");
+
+    });
+    function doLoadUI(id,url){
+        $("#"+id).click(function(){
+            //console.log("element is clicked ");
+            //在某个位置(mainContentId)加载一个页面
+            //load为jquery中的函数
+            //load函数会基于传入的url向服务端发起一个异步请求
+            $("#userContent").load(url);//工作线程
+            //console.log("finish");//main
+        });
+    }
+</script>

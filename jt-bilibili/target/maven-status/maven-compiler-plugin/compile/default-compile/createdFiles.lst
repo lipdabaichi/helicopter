@@ -1,0 +1,12 @@
+com\bilibili\manage\pojo\User.class
+com\bilibili\manage\controller\UserInformationController.class
+com\bilibili\manage\service\UserAdminService.class
+com\bilibili\manage\mapper\UserAdminDao.class
+com\bilibili\manage\common\web\GlobalExceptionHandler.class
+com\bilibili\manage\controller\UserOrderController.class
+com\bilibili\manage\mapper\UserMapper.class
+com\bilibili\manage\service\impl\UserAdminServiceImpl.class
+com\bilibili\manage\controller\UserAdminController.class
+com\bilibili\manage\controller\IndexController.class
+com\bilibili\manage\pojo\BaseEntity.class
+com\bilibili\manage\pojo\SysUser.class

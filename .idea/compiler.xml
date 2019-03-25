@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jt-bilibili" />
+        <module name="jt-common" />
+        <module name="jt-manage" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jt-bilibili" target="1.7" />
+      <module name="jt-common" target="1.7" />
+      <module name="jt-manage" target="1.7" />
+      <module name="jt-parent" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

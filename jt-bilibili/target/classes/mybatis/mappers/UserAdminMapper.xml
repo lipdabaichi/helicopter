@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.bilibili.manage.mapper.UserAdminDao">
+
+    <update id="updatePassword">
+
+        update sys_users
+        set password=#{newPwd},
+            salt=#{salt}
+        where username=#{username}
+
+    </update>
+    <select id="queryPasswordByUsername" resultType="string">
+        select password from sys_users
+        where username=#{username}
+    </select>
+    <!--<update id="updateObject">
+       update sys_users
+       set
+         username=#{username},
+         email=#{email},
+         mobile=#{mobile},
+         deptId=#{deptId},
+         modifiedUser=#{modifiedUser},
+         modifiedTime=now()
+       where id=#{id}
+    </update>
+   
+    &lt;!&ndash; 基于用户id获取用户信息以及用户对应的部门信息 &ndash;&gt;
+    <select id="findObjectById"
+            resultMap="userDeptResult">
+            select *
+            from sys_users
+            where id=#{id}
+    </select>
+   
+    <insert id="insertObject"
+            parameterType="com.db.sys.entity.SysUser"
+            useGeneratedKeys="true"
+            keyProperty="id">
+      insert into sys_users
+      (username,password,deptId,email,mobile,salt,valid,
+      createdTime,modifiedTime,createdUser,modifiedUser)
+      values
+      (#{username},#{password},#{deptId},#{email},#{mobile},#{salt},#{valid},
+      now(),now(),#{createdUser},#{modifiedUser})
+    </insert>
+   
+    <update id="validById">
+       update sys_users
+       set valid=#{valid},
+           modifiedUser=#{modifiedUser},
+           modifiedTime=now()
+       where id=#{id}
+    </update>
+   
+    &lt;!&ndash; 通过sql元素可以定义一个sql片段
+    ,其它地方使用到了可以直接包含 &ndash;&gt;
+    <sql id="queryWhereId">
+       from sys_users
+      &lt;!&ndash; 动态sql,基于条件定义sql &ndash;&gt;
+      <if test="username!=null and username!=''">
+       where username like concat("%",#{username},"%")        
+      </if>
+    </sql>
+    
+    <resultMap type="com.db.sys.vo.SysUserDeptResult" 
+               id="userDeptResult">
+           &lt;!&ndash; many2one,one2one &ndash;&gt;
+           <association property="sysDept"
+                        column="deptId"
+                        select="com.db.sys.dao.SysDeptDao.findById">
+           </association>
+    </resultMap>
+    
+    &lt;!&ndash; 查询当前页记录 &ndash;&gt;
+    <select id="findPageObjects"
+            resultMap="userDeptResult">
+        select * 
+        <include refid="queryWhereId"/>
+        order by createdTime desc
+        limit #{startIndex},#{pageSize}
+    </select>
+    <select id="getRowCount"
+            resultType="int">
+        select count(*)
+        <include refid="queryWhereId"/>
+    </select>
+
+    <select id="findUserByUserName" resultType="com.db.sys.entity.SysUser">
+        select * from sys_users
+        where username=#{username}
+    </select>-->
+    
+    
+ </mapper>
